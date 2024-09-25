@@ -32,7 +32,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-  ],
+, "app/utils/convertToTreeData.js"  ],
   "exclude": [
     "node_modules"
   ]
