@@ -29,7 +29,6 @@ const JsonInput: React.FC<JsonInputProps> = ({
   const validateJson = (value: string) => {
     try {
       const parsed = JSON.parse(value);
-      console.error(parsed);
       setError(null);
       return JSON.stringify(parsed, null, 2);
     } catch (err) {

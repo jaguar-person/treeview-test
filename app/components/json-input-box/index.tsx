@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { Paper, Stack, Button } from "@mantine/core";
-
 import { useTreeContext } from "@/app/context/TreeContext";
-
 import JsonInput from "./JsonInput";
 
 export default function JsonInputBox() {
@@ -14,10 +12,11 @@ export default function JsonInputBox() {
   const handleJsonChange = (json: string) => {
     setJsonValue(json);
   };
+
   const handleExecute = () => {
-    console.log(jsonValue);
     setTreeData(jsonValue);
   };
+
   return (
     <Paper className="flex-grow m-4">
       <Stack gap={16}>

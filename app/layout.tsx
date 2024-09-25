@@ -3,9 +3,7 @@
 import { createTheme, DEFAULT_THEME } from "@mantine/core";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
-
 import { TreeProvider } from "./context/TreeContext";
-
 import "./globals.css";
 
 const theme = createTheme({

@@ -2,20 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* Hide scrollbar for Chrome, Safari, and Opera */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge, and Firefox */
 * {
-  scrollbar-width: none; /* For Firefox */
-  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
-li
-{
+li {
   animation: show 600ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
 
   opacity: 0;
@@ -28,9 +24,4 @@ li
     opacity: 1;
     transform: none;
   }
-}
-
-* {
-  box-sizing: border-box;
-  content: "";
 }
