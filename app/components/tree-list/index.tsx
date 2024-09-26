@@ -17,6 +17,8 @@ export const TreeList = () => {
     if (treeData?.length) {
       const temp = convertToTreeData(JSON.parse(treeData));
       setData(temp);
+    } else {
+      setData([]);
     }
   }, [treeData]);
 

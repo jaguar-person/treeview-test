@@ -7,11 +7,13 @@ import { IconX } from "@tabler/icons-react";
 interface JsonInputProps {
   label?: string;
   placeholder?: string;
+  isInvalid?: boolean;
   validationError?: string;
   formatOnBlur?: boolean;
   autosize?: boolean;
   minRows?: number;
   onChange: (jsonValue: string) => void;
+  onValid: (isValid: boolean) => void;
 }
 
 const JsonInput: React.FC<JsonInputProps> = ({
@@ -22,16 +24,23 @@ const JsonInput: React.FC<JsonInputProps> = ({
   autosize = true,
   minRows = 4,
   onChange,
+  onValid,
 }) => {
   const [inputValue, setInputValue] = useState<string>("");
   const [error, setError] = useState<string | null>(null);
 
   const validateJson = (value: string) => {
     try {
-      const parsed = JSON.parse(value);
+      onValid(true);
       setError(null);
-      return JSON.stringify(parsed, null, 2);
+      if (value !== "") {
+        const parsed = JSON.parse(value);
+        return JSON.stringify(parsed, null, 2);
+      } else {
+        return JSON.stringify([], null, 2);
+      }
     } catch (err) {
+      onValid(false);
       setError(validationError);
       return value;
     }
@@ -44,7 +53,7 @@ const JsonInput: React.FC<JsonInputProps> = ({
   };
 
   const handleBlur = () => {
-    if (formatOnBlur && !error) {
+    if (formatOnBlur) {
       const formatted = validateJson(inputValue);
       setInputValue(formatted);
     }

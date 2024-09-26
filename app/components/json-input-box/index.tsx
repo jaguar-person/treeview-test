@@ -7,14 +7,19 @@ import JsonInput from "./JsonInput";
 
 export default function JsonInputBox() {
   const [jsonValue, setJsonValue] = useState<string>("");
+  const [isValid, setValid] = useState<boolean>(true);
   const { setTreeData } = useTreeContext();
 
   const handleJsonChange = (json: string) => {
     setJsonValue(json);
   };
 
+  const handleValid = (valid: boolean) => {
+    setValid(valid);
+  };
+
   const handleExecute = () => {
-    setTreeData(jsonValue);
+    if (isValid) setTreeData(jsonValue);
   };
 
   return (
@@ -28,8 +33,11 @@ export default function JsonInputBox() {
           autosize
           minRows={4}
           onChange={handleJsonChange}
+          onValid={handleValid}
         />
-        <Button onClick={handleExecute}>Execute</Button>
+        <Button onClick={handleExecute} disabled={!isValid}>
+          Execute
+        </Button>
       </Stack>
     </Paper>
   );
