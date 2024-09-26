@@ -19,7 +19,9 @@ export default function JsonInputBox() {
   };
 
   const handleExecute = () => {
-    if (isValid) setTreeData(jsonValue);
+    if (isValid) {
+      setTreeData(jsonValue);
+    }
   };
 
   return (

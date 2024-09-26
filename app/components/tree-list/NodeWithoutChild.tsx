@@ -38,7 +38,7 @@ export default function NodeWithoutChild({
         }}
         onClick={() => handleClick(value)}
       >
-        <Group gap={8} className="mb-2">
+        <Group gap={8}>
           <Paper
             p={4}
             bg={"#E6F2FF"}

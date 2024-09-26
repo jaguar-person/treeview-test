@@ -1,4 +1,3 @@
-// Define the structure of each tree node
 interface TreeNode {
   label: string;
   value: string;
@@ -27,6 +26,5 @@ export default function convertToTreeData(
     }
   }
 
-  // Convert the root object
   return Object.keys(obj).map((key) => recursiveConvert(key, obj[key]));
 }

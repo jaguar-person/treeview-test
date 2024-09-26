@@ -18,10 +18,10 @@ export default function NodeHasChildren({
         size={16}
         className={`${
           expanded ? "-rotate-0" : "-rotate-90"
-        } transition-transform duration-300 hover:bg-[#F4F5F5] rounded mb-2`}
+        } transition-transform duration-300 hover:bg-[#F4F5F5] rounded`}
       />
 
-      <Group gap={4} className="text-[10px] leading-4 mb-2">
+      <Group gap={4} className="text-[10px] leading-4">
         <span className="capitalize">{label}</span>
         <span className="text-[#737474]">{"[ " + length + " items ]"}</span>
       </Group>

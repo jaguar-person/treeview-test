@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Box, Paper, Stack, Group, Tree } from "@mantine/core";
 import TreeListHeader from "./Header";
 import NodeHasChildren from "./NodeHasChildren";
@@ -7,7 +8,6 @@ import NodeWithoutChild from "./NodeWithoutChild";
 import { useTreeContext } from "@/app/context/TreeContext";
 import convertToTreeData from "@/app/utils/convertToTreeData";
 import findPath from "@/app/utils/findPath";
-import { useEffect, useState } from "react";
 
 export const TreeList = () => {
   const { treeData } = useTreeContext();
@@ -39,7 +39,7 @@ export const TreeList = () => {
   };
 
   return (
-    <Box w={324} h={768} m={16} color="#1F2020" className="overflow-y-scroll">
+    <Box w={324} h={768} m={40} color="#1F2020" className="overflow-y-scroll">
       <Stack
         gap={0}
         bg={"white"}
@@ -49,7 +49,12 @@ export const TreeList = () => {
         <Paper p={16}>
           <Tree
             data={data}
-            levelOffset={16}
+            levelOffset={0}
+            classNames={{
+              root: "flex flex-col gap-2",
+              subtree:
+                "flex flex-col gap-2 border-l border-[#ECEDED] mt-2 pl-2 ml-2",
+            }}
             renderNode={({ node, expanded, hasChildren, elementProps }) => {
               return !!hasChildren ? (
                 <Group {...elementProps}>
