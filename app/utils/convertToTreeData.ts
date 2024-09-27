@@ -15,13 +15,13 @@ export default function convertToTreeData(
 
       return {
         label: String(key),
-        value: String(key) + String((Math.random() * 10000).toFixed(5)),
+        value: String(key) + String((1000 + Math.random() * 9000).toFixed(5)),
         children: children,
       };
     } else {
       return {
         label: String(key),
-        value: String(value) + String((Math.random() * 10000).toFixed(5)),
+        value: String(value) + String((1000 + Math.random() * 9000).toFixed(5)),
       };
     }
   }

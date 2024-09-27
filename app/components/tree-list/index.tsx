@@ -65,7 +65,7 @@ export const TreeList = () => {
                   />
                 </Group>
               ) : (
-                <Group gap={5} {...elementProps}>
+                <Group {...elementProps}>
                   <NodeWithoutChild
                     handleClick={CopyToClipboard(String(node.value))}
                     label={String(node.label)}
