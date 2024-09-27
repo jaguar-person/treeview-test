@@ -14,7 +14,7 @@ export default function TreeListHeader() {
         <Paper bg={"#ECEDED"} p={4} className="rounded-lg cursor-pointer">
           <IconListDetails stroke={2} size={16} />
         </Paper>
-        <Text size={"base"} fw={500}>
+        <Text size={"base"} fw={500} c={"#1F2020"}>
           Cell details
         </Text>
       </Group>

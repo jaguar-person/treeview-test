@@ -1,14 +1,10 @@
 "use client";
 
-import { createTheme, DEFAULT_THEME } from "@mantine/core";
 import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
+import { inter } from "./fonts";
 import { TreeProvider } from "./context/TreeContext";
 import "./globals.css";
-
-const theme = createTheme({
-  fontFamily: `Inter, ${DEFAULT_THEME.fontFamily}`,
-});
 
 export default function RootLayout({
   children,
@@ -21,8 +17,10 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={theme}>
-          <TreeProvider>{children}</TreeProvider>
+        <MantineProvider>
+          <TreeProvider>
+            <div className={inter.className}>{children}</div>
+          </TreeProvider>
         </MantineProvider>
       </body>
     </html>

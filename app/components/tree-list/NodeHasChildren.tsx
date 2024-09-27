@@ -1,5 +1,6 @@
 import { IconChevronDown } from "@tabler/icons-react";
-import { Group } from "@mantine/core";
+import { Group, Paper } from "@mantine/core";
+import { roboto_mono } from "@/app/fonts";
 
 interface INodeHasChildren {
   expanded: boolean;
@@ -21,10 +22,12 @@ export default function NodeHasChildren({
         } transition-transform duration-300 hover:bg-[#F4F5F5] rounded`}
       />
 
-      <Group gap={4} className="text-[10px] leading-4">
-        <span className="capitalize">{label}</span>
-        <span className="text-[#737474]">{"[ " + length + " items ]"}</span>
-      </Group>
+      <Paper className="text-[10px] leading-4">
+        <span className="capitalize text-[#1F2020] font-medium">{label}</span>
+        <span className={roboto_mono.className + " text-[#737474]"}>
+          {" [" + length + " items]"}
+        </span>
+      </Paper>
     </Group>
   );
 }

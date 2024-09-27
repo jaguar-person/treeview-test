@@ -15,13 +15,13 @@ export default function convertToTreeData(
 
       return {
         label: String(key),
-        value: String(key) + String(Math.random() * 10000), // Adding Math.random
+        value: String(key) + String((Math.random() * 10000).toFixed(5)),
         children: children,
       };
     } else {
       return {
-        label: Number.isNaN(Number(key)) ? key.toString() : "",
-        value: String(value),
+        label: String(key),
+        value: String(value) + String((Math.random() * 10000).toFixed(5)),
       };
     }
   }

@@ -26,7 +26,7 @@ export default function NodeWithoutChild({
             >
               <IconCopy size={12} />
             </Paper>
-            <span className="px-1 border border-[#DEDFDF] rounded text-[#1F2020] text-[10px] leading-4 bg-[#F9FAFA] shadow-sm">
+            <span className="text-[#1F2020] text-[10px] leading-4 px-1 border border-[#DEDFDF] rounded bg-[#F9FAFA] shadow-sm">
               Create column
             </span>
           </Group>
@@ -49,8 +49,12 @@ export default function NodeWithoutChild({
             <IconLetterT size={8} color="#0048C0" />
           </Paper>
           <Group gap={4} className="text-[10px] leading-4 w-4/5">
-            <span className="capitalize">{label}</span>
-            <span className="text-[#737474]">{value}</span>
+            <span className="capitalize text-[#1F2020] font-medium">
+              {label}
+            </span>
+            <span className="text-[#737474]">
+              {value.slice(0, value.length - 10)}
+            </span>
           </Group>
         </Group>
       </Tooltip>
