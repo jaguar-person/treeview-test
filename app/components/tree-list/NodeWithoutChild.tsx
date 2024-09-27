@@ -1,5 +1,5 @@
 import { IconLetterT, IconCopy } from "@tabler/icons-react";
-import { Paper, Group, Tooltip } from "@mantine/core";
+import { Paper, Group, Tooltip, Text } from "@mantine/core";
 
 interface INodeWithoutChild {
   handleClick: (value: string) => void;
@@ -26,9 +26,13 @@ export default function NodeWithoutChild({
             >
               <IconCopy size={12} />
             </Paper>
-            <span className="text-[#1F2020] text-[10px] leading-4 px-1 border border-[#DEDFDF] rounded bg-[#F9FAFA] shadow-sm">
+            <Text
+              c={"#1F2020"}
+              px={4}
+              className="text-[10px] leading-4 border border-[#DEDFDF] rounded bg-[#F9FAFA] shadow-sm"
+            >
               Create column
-            </span>
+            </Text>
           </Group>
         }
         position="right"
@@ -48,13 +52,16 @@ export default function NodeWithoutChild({
           >
             <IconLetterT size={8} color="#0048C0" />
           </Paper>
-          <Group gap={4} className="text-[10px] leading-4 w-4/5">
-            <span className="capitalize text-[#1F2020] font-medium">
+          <Group gap={4} className="w-4/5">
+            <Text
+              c={"text-[#1F2020]"}
+              className="capitalize font-medium text-[10px] leading-4"
+            >
               {label}
-            </span>
-            <span className="text-[#737474]">
+            </Text>
+            <Text c={"#737474"} className="text-[10px] leading-4">
               {value.slice(0, value.length - 10)}
-            </span>
+            </Text>
           </Group>
         </Group>
       </Tooltip>
